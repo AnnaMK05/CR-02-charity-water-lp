@@ -1,47 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Water Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charity: Water Landing Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Proxima Nova', 'Georgia', serif;
+      background-color: #FFF7E1;
+      color: #003366;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #77A8BB;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    nav {
+      display: flex; /* This puts the links in a row */
+      flex-wrap: wrap;
+      gap: 45px; /* This adds space between the navigation buttons */
+      font-family: 'Proxima Nova', Arial, sans-serif;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #003366;
+      font-weight: 600;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .hero img {
+      max-width: 100%;
+      width: 300px;
+      margin: 10px;
+      border: 6px solid #CBCCD1;
+    }
+
+    .hero-text {
+      max-width: 600px;
+      margin: 20px;
+    }
+
+    .hero-text h1 {
+      color: #BF6C46;
+      font-size: 2em;
+      margin-bottom: 10px;
+      font-family: 'Proxima Nova', Arial, sans-serif; /* Use Proxima Nova for the heading */
+    }
+
+    .hero-text p {
+      font-size: 1.2em;
+      color: #003366;
+    }
+
+    .story {
+      display: none;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 30px;
+    }
+
+    .cta-buttons button {
+      padding: 15px 25px;
+      background-color: #FFC907;
+      color: #003366;
+      border: 2px solid #003366;
+      border-radius: 20px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .cta-buttons button:hover {
+      background-color: #CBCCD1;
+    }
+
+    /* Media queries improve layout on smaller screens */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .hero-text h1 {
+        font-size: 1.75em;
+      }
+
+      .hero-text p {
+        font-size: 1em;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-text h1 {
+        font-size: 1.5em;
+      }
+
+      .hero-text p {
+        font-size: 0.95em;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta-buttons button {
+        width: 80%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Hero Section: This is the main banner at the top of the page -->
-    <section class="hero">
-        <!-- Main headline -->
-        <h1>Clean Water for Everyone</h1>
-        <!-- Subheadline -->
-        <p>Join us in bringing safe, clean water to communities in need.</p>
-    </section>
+  <header>
+    <div class="logo">
+      <img src=img/cw_logo-2.png height="30">
+      
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Our Impact</a>
+      <a href="#">About Us</a>
+      <a href="#">Sign In</a>
+    </nav>
+  </header>
 
-    <!-- Story Section: This tells the story of the nonprofit -->
-    <section class="story">
-        <h2>Our Story</h2>
-        <p>
-         
-    </section>
+  <section class="hero">
+    <img src=img/charity_water_Tanzania_TaraShupePhotography_0149.jpg alt="Water Collection Photo" />
+    <div class="hero-text">
+      <h1>See the Change You Help Fund.<br />Become the Driving Force.</h1>
+      <p>Every dollar you donate helps communities access clean water and shows you how to do it. Authentic stories. Actual activists. Genuine influence that you can monitor, communicate, and trust.</p>
+    </div>
+  </section>
 
-    <!-- Real-World Impact Story Section -->
-    <section class="impact-story">
-        <!-- Section headline -->
-        <h2>Real Impact: Meet Amina</h2>
-        <!-- Container for image and text -->
-        <div class="impact-content">
-            <!-- Impact image -->
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Amina smiling with clean water" class="impact-image">
-            <!-- Impact story text -->
-            <p>
-                Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
-            </p>
-        </div>
-    </section>
+  <section class="cta-buttons">
+    <!-- Join Our Mission button -->
+    <button id="joinBtn">Join Our Mission!</button>
 
-    <!-- Call-to-Action Section: This encourages visitors to take action -->
-    <section class="call-to-action">
-        <h2>Make a Difference</h2>
-        <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
-        <a href="#" class="donate-button">Donate Now</a>
-    </section>
+    <!-- Donation form, hidden at first -->
+    <form id="donationForm" style="display: none; margin-top: 15px;">
+      <!-- Input for donation amount -->
+      <input type="number" id="donationAmount" placeholder="Enter donation amount" min="1" required>
+      <!-- Donate now button -->
+      <button type="submit">Donate now</button>
+    </form>
+  </section>
+
+  <!-- Add this script at the end of your body for simple interactivity -->
+  <script>
+    // Get the button and form elements
+    var joinBtn = document.getElementById('joinBtn');
+    var donationForm = document.getElementById('donationForm');
+
+    // When the button is clicked, show the donation form
+    joinBtn.onclick = function() {
+      donationForm.style.display = 'block'; // Show the form
+      joinBtn.style.display = 'none'; // Hide the Join button
+    };
+
+    // Optional: Prevent the form from actually submitting (for now)
+    donationForm.onsubmit = function(event) {
+      event.preventDefault();
+      alert('Thank you for your donation!');
+    };
+  </script>
 </body>
 </html>
+
